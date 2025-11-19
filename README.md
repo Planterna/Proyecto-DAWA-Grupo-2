@@ -1,4 +1,4 @@
-# Proyecto DAWA Grupo 4
+# Proyecto DAWA Grupo 2
 
 `LEER IMPORTANTE`
 
