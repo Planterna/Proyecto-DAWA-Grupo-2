@@ -9,9 +9,10 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./tabla-general.component.css'],
 })
 export class TablaGeneralComponent {
+
   @Input() columnas: string[] = [];
   @Input() datos: any[] = [];
-  @Output() accion = new EventEmitter<{ tipo: string; elemento: any }>();
+  @Output() accion = new EventEmitter<{ tipo: string, elemento: any }>();
   @Input() acciones: string[] = [];
 
   menuAbiertoPara: number | null = null;

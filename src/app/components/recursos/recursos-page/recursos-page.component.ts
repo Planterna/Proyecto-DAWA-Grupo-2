@@ -18,22 +18,22 @@ import { TablaGeneralComponent } from '../../shared/tabla-general/tabla-general.
   styleUrl: './recursos-page.component.css'
 })
 export class RecursosPageComponent {
-  columns = ['recurso','categoria','estado','horarios']; // ejemplo
-  data = [
-    { recurso: 'Sala 1', categoria: 'Aula', estado: 'Disponible', horarios: '08:00-10:00' },
-    { recurso: 'Sala 2', categoria: 'Aula', estado: 'Ocupado', horarios: '10:00-12:00' }
+  columnas = ['recurso','categoria','estado','horarios']; // ejemplo
+  datos = [
+    { recurso: 'Sala 1', categoria: 'Herramientas', estado: 'Disponible', horarios: '08:00-10:00' },
+    { recurso: 'Sala 2', categoria: 'Salones', estado: 'Ocupado', horarios: '10:00-12:00' }
   ];
 
   // Este método recibe el evento desde tabla-general
-  onAction(event: { type: string, item: any }) {
-    console.log('Acción recibida:', event.type, 'en el ítem:', event.item);
+  manejarAccion(evento: { tipo: string, elemento: any }) {
+    console.log('Acción recibida:', evento.tipo, 'en el elemento:', evento.elemento);
 
-    switch(event.type) {
+    switch(evento.tipo) {
       case 'reservar':
-        console.log('Reservar:', event.item);
+        console.log('Reservar:', evento.elemento);
         break;
       case 'solicitar':
-        console.log('Solicitar:', event.item);
+        console.log('Solicitar:', evento.elemento);
         break;
     }
   }
