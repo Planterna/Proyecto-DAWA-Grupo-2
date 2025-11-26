@@ -8,6 +8,10 @@
 
 - `npm install -g @angular/cli`
 
+1. Para instalar Tailwinds y DaisyUI Importante Usar
+
+- `npm install daisyui@latest tailwindcss@latest @tailwindcss/postcss@latest postcss@latest --force`
+
 - `npm start`
 
 2. Para subir los json respectivos
@@ -28,4 +32,4 @@
 
 5. Para iniciar la aplicación usar
 
-- `ng serve -o`
+- `ng serve -o ` o `ng serve --live-reload=false`
