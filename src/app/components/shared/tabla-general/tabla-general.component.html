@@ -2,23 +2,23 @@
   <table class="tabla">
     <thead>
       <tr>
-        <th *ngFor="let col of columns">{{ col | titlecase }}</th>
+        <th *ngFor="let col of columnas">{{ col | titlecase }}</th>
         <th>Acciones</th>
       </tr>
     </thead>
 
     <tbody>
-      <tr *ngFor="let row of data; let i = index">
+      <tr *ngFor="let fila of datos; let i = index">
         
-        <td *ngFor="let col of columns">
-          {{ cellValue(row, col) }}
+        <td *ngFor="let col of columnas">
+          {{ obtenerValorCelda(fila, col) }}
         </td>
 
         <td class="acciones-cell">
-          <button class="dot-btn" (click)="toggleMenu(i)">⋮</button>
+          <button class="dot-btn" (click)="alternarMenu(i)">⋮</button>
 
-          <div class="menu" *ngIf="menuOpenFor === i">
-            <button *ngFor="let a of actions" (click)="doAction(a, row)">
+          <div class="menu" *ngIf="menuAbiertoPara === i">
+            <button *ngFor="let a of acciones" (click)="ejecutarAccion(a, fila)">
               {{ a | titlecase }}
             </button>
           </div>

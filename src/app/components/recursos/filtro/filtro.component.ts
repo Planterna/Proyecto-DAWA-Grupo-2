@@ -13,20 +13,20 @@ export class FiltroComponent {
   abierto = true; // acordeón abierto
 
   categorias = [
-    { name: 'Deportes', checked: false },
-    { name: 'Salones', checked: false },
-    { name: 'Herramientas', checked: false },
+    { nombre: 'Deportes', marcado: false },
+    { nombre: 'Salones', marcado: false },
+    { nombre: 'Herramientas', marcado: false },
   ];
 
-  toggleAcordeon() {
+  alternarAcordeon() {
     this.abierto = !this.abierto;
   }
 
-  toggleCategoria(cat: any) {
-    cat.checked = !cat.checked;
+  alternarCategoria(cat: any) {
+    cat.marcado = !cat.marcado;
   }
 
   limpiar() {
-    this.categorias.forEach(c => c.checked = false);
+    this.categorias.forEach(c => c.marcado = false);
   }
 }

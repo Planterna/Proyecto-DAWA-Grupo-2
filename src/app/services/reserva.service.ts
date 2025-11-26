@@ -2,47 +2,47 @@ import { Injectable } from '@angular/core';
 import { Reserva } from '../models/reserva.model';
 import { Observable, of } from 'rxjs';
 
-const KEY = 'app_reservas_v1';
+const CLAVE = 'app_reservas_v1';
 
 @Injectable({ providedIn: 'root' })
-export class ReservaService {
+export class ServicioReserva {
   private reservas: Reserva[] = [];
 
   constructor() {
-    const stored = localStorage.getItem(KEY);
-    if (stored) this.reservas = JSON.parse(stored);
+    const almacenado = localStorage.getItem(CLAVE);
+    if (almacenado) this.reservas = JSON.parse(almacenado);
   }
 
-  getAll(): Observable<Reserva[]> {
+  obtenerTodas(): Observable<Reserva[]> {
     return of(this.reservas);
   }
 
-  create(r: Reserva): Observable<Reserva> {
-    r.id = this.nextId();
+  crear(r: Reserva): Observable<Reserva> {
+    r.id = this.proximoId();
     r.estado = 'activa';
     this.reservas.push(r);
-    this.save();
+    this.guardar();
     return of(r);
   }
 
-  update(reserva: Reserva): Observable<Reserva> {
+  actualizar(reserva: Reserva): Observable<Reserva> {
     const idx = this.reservas.findIndex(x => x.id === reserva.id);
     if (idx > -1) this.reservas[idx] = reserva;
-    this.save();
+    this.guardar();
     return of(reserva);
   }
 
-  delete(id: number): Observable<boolean> {
+  eliminar(id: number): Observable<boolean> {
     this.reservas = this.reservas.filter(r => r.id !== id);
-    this.save();
+    this.guardar();
     return of(true);
   }
 
-  private nextId(): number {
+  private proximoId(): number {
     return this.reservas.length ? Math.max(...this.reservas.map(r => r.id)) + 1 : 1;
   }
 
-  private save() {
-    localStorage.setItem(KEY, JSON.stringify(this.reservas));
+  private guardar() {
+    localStorage.setItem(CLAVE, JSON.stringify(this.reservas));
   }
 }

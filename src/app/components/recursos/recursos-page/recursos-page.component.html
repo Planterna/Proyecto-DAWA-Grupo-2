@@ -16,10 +16,10 @@
  <!-- TABLA REUTILIZABLE -->
     <div class="col-9">
       <app-tabla-general
-        [columns]="columns"
-        [data]="data"
-        [actions]="['ver','reservar','solicitar']"
-        (action)="onAction($event)"
+        [columnas]="columnas"
+        [datos]="datos"
+        [acciones]="['ver','reservar','solicitar']"
+        (accion)="manejarAccion($event)"
       ></app-tabla-general>
     </div>
 

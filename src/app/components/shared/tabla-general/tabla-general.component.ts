@@ -10,25 +10,25 @@ import { CommonModule } from '@angular/common';
 })
 export class TablaGeneralComponent {
 
-  @Input() columns: string[] = [];
-  @Input() data: any[] = [];
-  @Output() action = new EventEmitter<{ type: string, item: any }>();
-  @Input() actions: string[] = []; 
+  @Input() columnas: string[] = [];
+  @Input() datos: any[] = [];
+  @Output() accion = new EventEmitter<{ tipo: string, elemento: any }>();
+  @Input() acciones: string[] = []; 
 
-  menuOpenFor: number | null = null;
+  menuAbiertoPara: number | null = null;
 
-  toggleMenu(id: number) {
-    this.menuOpenFor = this.menuOpenFor === id ? null : id;
+  alternarMenu(id: number) {
+    this.menuAbiertoPara = this.menuAbiertoPara === id ? null : id;
   }
 
-  doAction(type: string, item: any) {
-    this.action.emit({ type, item });
-    this.menuOpenFor = null;
+  ejecutarAccion(tipo: string, elemento: any) {
+    this.accion.emit({ tipo, elemento });
+    this.menuAbiertoPara = null;
   }
 
-  cellValue(row: any, col: string) {
-    if (!row) return '';
-    const key = col.toLowerCase();
-    return row[key] ?? row[col] ?? '';
+  obtenerValorCelda(fila: any, columna: string) {
+    if (!fila) return '';
+    const clave = columna.toLowerCase();
+    return fila[clave] ?? fila[columna] ?? '';
   }
 }

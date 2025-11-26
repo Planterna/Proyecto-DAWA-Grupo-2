@@ -1,7 +1,7 @@
 export interface Reserva {
   id: number;
-  recursoId: number;
-  recursoNombre?: string;
+  idRecurso: number;
+  nombreRecurso?: string;
   usuario: string;
   fechaInicio: string; 
   fechaFin: string;    
