@@ -1,4 +1,13 @@
-<div>
-  <h1>NUEVO PROYRCTO {{ title() }}</h1>
+<div class="min-h-screen flex flex-col">
+  <header class="shadow-sm">
+    <app-navbar></app-navbar>
+  </header>
+
+  <main class="grow">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer class="mt-auto">
+    <app-footer></app-footer>
+  </footer>
 </div>
-<router-outlet></router-outlet>

@@ -1,0 +1,28 @@
+<div class="container mt-4">
+
+   <!-- HEADER -->
+   <app-header></app-header>
+   
+  <!-- BUSCADOR -->
+  <app-buscador></app-buscador>
+
+  <div class="row mt-4">
+
+    <!-- FILTRO -->
+    <div class="col-3">
+      <app-filtro></app-filtro>
+    </div>
+
+ <!-- TABLA REUTILIZABLE -->
+    <div class="col-9">
+      <app-tabla-general
+        [columnas]="columnas"
+        [datos]="datos"
+        [acciones]="['ver','reservar','solicitar']"
+        (accion)="manejarAccion($event)"
+      ></app-tabla-general>
+    </div>
+
+  </div>
+
+</div>

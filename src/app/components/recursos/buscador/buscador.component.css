@@ -1,0 +1,28 @@
+.custom-search {
+  width: 280px;              
+  border: 1px solid #ccc;     
+  border-radius: 4px;        
+  overflow: hidden;          
+}
+
+/* Input dentro del buscador */
+.custom-search .form-control {
+  background-color: white;    
+  border: 0;                 
+}
+
+/* Icono dentro del buscador */
+.custom-search .input-group-text {
+  background-color: white;   
+  border: 0;                  
+}
+.header-container h5 {
+  position: absolute;
+  left: 38%; 
+  transform: translateX(-50%);
+  margin: 0;
+  font-weight: 400;      
+  font-size: 1.2rem;      
+  letter-spacing: 0.5px;    
+}
+
