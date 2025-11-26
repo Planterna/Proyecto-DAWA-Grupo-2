@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "nombre": "Cancha Futbol",
+    "descripcion": "Cancha principal",
+    "categoria": "Deportes",
+    "capacidad": 22,
+    "cantidad": 1,
+    "disponible": true,
+    "ubicacion": "Sector A"
+  },
+  {
+    "id": 2,
+    "nombre": "Salón Comunal 1",
+    "descripcion": "Salón para eventos",
+    "categoria": "Salones",
+    "capacidad": 50,
+    "cantidad": 1,
+    "disponible": true,
+    "ubicacion": "Bloque B"
+  }
+]

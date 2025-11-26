@@ -1,0 +1,31 @@
+<div class="tabla-wrapper">
+  <table class="tabla">
+    <thead>
+      <tr>
+        <th *ngFor="let col of columns">{{ col | titlecase }}</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let row of data; let i = index">
+        
+        <td *ngFor="let col of columns">
+          {{ cellValue(row, col) }}
+        </td>
+
+        <td class="acciones-cell">
+          <button class="dot-btn" (click)="toggleMenu(i)">⋮</button>
+
+          <div class="menu" *ngIf="menuOpenFor === i">
+            <button *ngFor="let a of actions" (click)="doAction(a, row)">
+              {{ a | titlecase }}
+            </button>
+          </div>
+
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
