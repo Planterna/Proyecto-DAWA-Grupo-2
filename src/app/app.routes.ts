@@ -2,7 +2,20 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   // {
+  //   path: 'cuadro-alerta',
+  //   component: CuadroAlerta,
+  // },
+  // {
+  //   path: 'tabla-reutilizable',
+  //   component: TablaReutilizable,
+  // },
+  // {
   //   path: '',
-  //   component: ;
-  // }
+  //   redirectTo: 'tabla-reutilizable',
+  //   pathMatch: 'full',
+  // },
+  // {
+  //   path: '**',
+  //   redirectTo: 'tabla-reutilizable',
+  // },
 ];
