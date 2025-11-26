@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Recursos } from '../../../models/recursos';
 import { Reservaciones } from '../../../models/reservaciones';
@@ -9,7 +9,6 @@ import { ServReservaciones } from '../../../services/ServReservaciones';
   selector: 'app-tabla-reutilizable',
   imports: [],
   templateUrl: './tablaReutilizable.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TablaReutilizable {
   reservaciones: Reservaciones[] = [];

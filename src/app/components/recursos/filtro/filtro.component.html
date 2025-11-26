@@ -1,0 +1,26 @@
+<div class="filtro-container">
+  <div class="filtro-header">
+    <span class="titulo">Filtro</span>
+    <span class="limpiar" (click)="limpiar()">Limpiar</span>
+  </div>
+
+  <div class="categorias-titulo" (click)="toggleAcordeon()">
+    <span>Categorías ({{ categorias.length }})</span>
+    
+    <span class="flecha" [class.arriba]="abierto">
+      <svg class="icono-flecha" viewBox="0 0 24 24">
+        <path d="M7 10l5 5 5-5" stroke="#333" stroke-width="2" fill="none"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+  </div>
+
+  <div *ngIf="abierto">
+    <div class="categoria-item" *ngFor="let c of categorias">
+      <div class="categoria-row" (click)="toggleCategoria(c)">
+        <span>{{ c.name }}</span>
+        <div class="check" [class.checked]="c.checked"></div>
+      </div>
+    </div>
+  </div>
+</div>
